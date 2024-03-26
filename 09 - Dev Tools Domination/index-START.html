@@ -19,28 +19,49 @@
     }
 
     // Regular
-
+    console.log('hello')
     // Interpolated
-
+    console.log(`Hello I am a %s string!`, '😄') // macross can use to put any emoji etc
     // Styled
-
+    console.log(`%c I am some great text`, 'font-size: 20px; background: red'); // styling console
     // warning!
-
+    console.warn('OH NOOOO')
     // Error :|
-
+    console.error('OH nooooo')
     // Info
-
+    console.info('Fun fact: fact')
     // Testing
-
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('ouch'), 'that is wrong, it does not contain class ouch')
     // clearing
-
+    console.clear()
     // Viewing DOM Elements
-
+    console.log(p)// element
+    console.dir(p)// methods of element
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`This is ${dog.name} and he is ${dog.age} years old`)
+      console.log(`This is ${dog.name} is ${dog.age * 7} dog year`);
+      console.groupEnd(`${dog.name}`); // make these string in one group
+    })
     // counting
-
+    console.count('Wes'); // 1
+    console.count('Wes'); // 2
+    console.count('Wes'); // 3
+    console.count('Wes'); // 4
     // timing
+    console.time('fetching data'); // timedata like in python
+    fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+              console.timeEnd('fetching data');
+              console.log(data)
+            })
+
+    // very cool table
+    console.table(dogs)
 
   </script>
 </body>
